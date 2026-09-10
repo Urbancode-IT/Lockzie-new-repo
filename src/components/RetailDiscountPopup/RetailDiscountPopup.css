@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.retail-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.retail-popup-container {
+  width: 900px;
+  max-width: 95%;
+  min-height: 550px;
+  background: transparent;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.4s ease-out;
+}
+
+.retail-popup-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 1px solid #FFFFFF;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 10;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.retail-popup-close:hover {
+  transform: scale(1.1);
+}
+
+.retail-popup-close svg {
+  width: 14px;
+  height: 14px;
+  stroke: #FFFFFF;
+}
+
+.retail-popup-content {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background: transparent;
+}
+
+.retail-popup-left {
+  flex: 1.2;
+  padding: 30px 24px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #F8F5F0; /* Cream background */
+  border-top-left-radius: 8px;
+}
+
+.retail-logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.retail-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  margin: 0;
+  color: #0A0A0A;
+}
+
+.retail-logo-sub {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #0A0A0A;
+  margin-top: 4px;
+}
+
+.retail-logo-heart-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.retail-logo-line {
+  height: 1px;
+  width: 40px;
+  background-color: #0A0A0A;
+}
+
+.retail-logo-heart {
+  color: #0A0A0A;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.retail-special-offer {
+  font-family: 'Great Vibes', cursive, 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 36px;
+  color: #0A0A0A;
+  margin-bottom: -10px;
+  font-weight: 300;
+}
+
+.retail-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 10px 0;
+  color: #0A0A0A;
+}
+
+.retail-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 110px;
+  line-height: 0.8;
+  font-weight: 500;
+  letter-spacing: -4px;
+}
+
+.retail-percent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  line-height: 0.8;
+  font-weight: 500;
+  margin-left: 6px;
+  margin-top: 5px;
+}
+
+.retail-off {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+.retail-pill {
+  background: #0A0A0A;
+  border: 1px solid #0A0A0A;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.retail-features {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 15px;
+}
+
+.retail-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  position: relative;
+  flex: 1;
+}
+
+.retail-feature:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 24px;
+  width: 1px;
+  background-color: rgba(184, 151, 88, 0.3);
+}
+
+.retail-feature svg {
+  width: 26px;
+  height: 26px;
+  stroke: #0A0A0A;
+  stroke-width: 0.8px;
+}
+
+.retail-feature span {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  color: #0A0A0A;
+  line-height: 1.2;
+}
+
+.retail-description {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 12px;
+  color: #0A0A0A;
+  line-height: 18px;
+  margin: 0 0 20px 0;
+  font-weight: 400;
+  max-width: 320px;
+}
+
+.retail-book-btn {
+  background: #0A0A0A;
+  color: #FFFFFF;
+  border: 1px solid #0A0A0A;
+  padding: 14px 24px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.retail-book-btn:hover {
+  background: #B89758;
+  border-color: #B89758;
+}
+
+.retail-arrow {
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+.retail-book-btn:hover .retail-arrow {
+  transform: translateX(4px);
+}
+
+.retail-terms {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 8px;
+  color: #525252;
+  margin-top: 2px;
+}
+
+.retail-gift-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.retail-gift-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #0A0A0A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.retail-gift-text {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #0A0A0A;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.retail-popup-right {
+  flex: 1.1;
+  position: relative;
+  border-top-right-radius: 8px;
+}
+
+.retail-right-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-right-radius: 8px;
+}
+
+.retail-badge {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  width: 130px;
+  height: 130px;
+  background: #0A0A0A;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 5;
+}
+
+@media (max-width: 950px) {
+  .retail-badge {
+    right: 20px;
+    bottom: 20px;
+    top: auto;
+    transform: none;
+  }
+}
+
+.retail-badge-inner {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #B89758;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.retail-badge-enjoy {
+  font-family: 'Great Vibes', cursive, 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-bottom: 2px;
+}
+
+.retail-badge-percent {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  line-height: 1;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.retail-badge-percent span {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.retail-badge-text {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.retail-popup-bottom {
+  background: #111111;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px 20px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top: 1px solid #B89758;
+  box-sizing: border-box;
+}
+
+.retail-bottom-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.retail-bottom-item svg {
+  width: 18px;
+  height: 18px;
+  stroke: #B89758;
+}
+
+.retail-bottom-item span {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 9px;
+  color: #FFFFFF;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .retail-popup-container {
+    height: auto;
+    max-height: 95vh;
+  }
+  
+  .retail-popup-content {
+    flex-direction: column;
+  }
+  
+  .retail-popup-right {
+    display: none;
+  }
+  
+  .retail-popup-left {
+    padding: 40px 20px;
+  }
+  
+  .retail-popup-bottom {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

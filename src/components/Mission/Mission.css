@@ -1,0 +1,114 @@
+.mission-section {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 90px 0 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-container {
+  display: flex;
+  width: 1184px;
+  max-width: 95%;
+  background: #E5E5E5;
+  border-top: 0.61px solid #E0E0E0;
+  border-left: 0.61px solid #E0E0E0;
+  border-right: 0.61px solid #E0E0E0;
+  border-bottom: none;
+  gap: 1px; /* Creates the vertical divider effect from the background color */
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+
+.mission-box {
+  flex: 1 1 0;
+  background: #FAFAF8;
+  padding: 40px;
+  box-sizing: border-box;
+  min-height: 281px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 60px;
+  color: #D4D4D4;
+  margin-bottom: 24px;
+}
+
+.home-mission-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 32px;
+  color: #0A0A0A;
+  margin: 0 0 12px 0;
+}
+
+.mission-desc {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px; /* 162% */
+  color: #525252;
+  margin: 0;
+  max-width: 280px;
+}
+
+.mission-signature {
+  margin-top: 113px;
+  text-align: center;
+}
+
+.mission-signature h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  color: #0A0A0A;
+  margin: 0 0 8px 0;
+}
+
+.mission-signature p {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  color: #737373;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .mission-container {
+    flex-direction: column;
+    gap: 1px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-box {
+    padding: 24px;
+    min-height: auto;
+  }
+  .mission-number {
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 16px;
+  }
+  .mission-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .mission-signature {
+    margin-top: 60px;
+  }
+  .mission-signature h2 {
+    font-size: 32px;
+  }
+}

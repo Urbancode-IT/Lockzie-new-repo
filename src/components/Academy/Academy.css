@@ -1,0 +1,264 @@
+.academy-section {
+  width: 100%;
+  background-color: #FAFAF8;
+  padding: 120px 80px;
+  box-sizing: border-box;
+}
+
+.academy-header {
+  max-width: 800px;
+  margin: 0 auto 80px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.academy-label {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 11px;
+  color: #737373;
+  margin-bottom: 16px;
+}
+
+.academy-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: -0.6px;
+  color: #0A0A0A;
+  margin: 0 0 24px 0;
+}
+
+.academy-subheading {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #6B6B6B;
+  max-width: 615px;
+  margin: 0;
+}
+
+.academy-cards-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.academy-card {
+  width: 384px;
+  height: 531.5px;
+  background: #FFFFFF;
+  border: 1px solid #E7E5E4;
+  box-shadow: 0px 10px 40px -12px rgba(0, 0, 0, 0.12);
+  border-radius: 28px;
+  padding: 40px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.popular-badge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFFFFF;
+  border-radius: 9999px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 11px;
+  color: #0A0A0A;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.academy-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.academy-level {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 10px;
+  color: #6B6B6B;
+}
+
+.academy-duration {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 10px;
+  color: #6B6B6B;
+}
+
+.academy-card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: -0.3px;
+  color: #0A0A0A;
+  margin: 0 0 12px 0;
+}
+
+.academy-card-price {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.price-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -0.36px;
+  color: #0A0A0A;
+  display: flex;
+  align-items: center;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum";
+}
+
+.currency-symbol {
+  font-size: 30px;
+  margin-right: 4px;
+  position: relative;
+  top: 2px;
+}
+
+.price-period {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 11px;
+  color: #6B6B6B;
+  padding-bottom: 6px;
+}
+
+.academy-certified {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 11px;
+  color: #6B6B6B;
+  margin-bottom: 24px;
+}
+
+.academy-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.academy-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 14px;
+  line-height: 23px;
+  color: rgba(10, 10, 10, 0.8);
+}
+
+.feature-icon {
+  width: 16px;
+  height: 16px;
+  background: #0A0A0A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.academy-btn {
+  width: 100%;
+  height: 50px;
+  background: #0A0A0A;
+  color: #FAFAF9;
+  border: none;
+  border-radius: 9999px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: auto;
+}
+
+.academy-btn:hover {
+  opacity: 0.8;
+}
+
+/* Popular Card Overrides */
+.academy-card.popular-card {
+  background: #0A0A0A;
+  border-color: #0A0A0A;
+}
+
+.academy-card.popular-card .academy-level,
+.academy-card.popular-card .academy-duration,
+.academy-card.popular-card .price-period,
+.academy-card.popular-card .academy-certified {
+  color: #A3A3A3;
+}
+
+.academy-card.popular-card .academy-card-title,
+.academy-card.popular-card .price-amount {
+  color: #FFFFFF;
+}
+
+.academy-card.popular-card .academy-features li {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.academy-card.popular-card .feature-icon {
+  background: #FFFFFF;
+}
+
+.academy-card.popular-card .academy-btn {
+  background: #FFFFFF;
+  color: #0A0A0A;
+}
+
+@media (max-width: 1024px) {
+  .academy-cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .academy-section {
+    padding: 60px 20px;
+  }
+  .academy-heading {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  .academy-card {
+    width: 100%;
+    max-width: 384px;
+    height: auto;
+    min-height: 400px;
+    padding: 24px;
+  }
+}

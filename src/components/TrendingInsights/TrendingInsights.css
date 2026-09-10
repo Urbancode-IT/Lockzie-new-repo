@@ -1,0 +1,303 @@
+.ti-section {
+  width: 100%;
+  padding: 80px 0;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.ti-container {
+  max-width: 1088px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.ti-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.ti-title {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.9px;
+  color: #000000;
+  margin: 0;
+}
+
+.ti-instagram-link {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+}
+
+.ti-instagram-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ti-instagram-link span {
+  font-family: 'Satoshi', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.ti-underline {
+  width: 0%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.59);
+  border-radius: 48px;
+  margin-top: 4px;
+  opacity: 1;
+  transition: width 0.4s ease;
+}
+
+.ti-instagram-link:hover .ti-underline {
+  width: 100%;
+}
+
+/* Slider Area */
+.ti-slider-area {
+  position: relative;
+  width: 1088px;
+  height: 662px;
+  margin: 0 auto;
+  z-index: 0; /* Keeps it strictly below the navbar */
+}
+
+/* Navigation Arrows */
+.ti-arrow-left, .ti-arrow-right {
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  background: #D9D9D9;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  top: 280px; /* From Figma: top: 280px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.ti-arrow-left:hover, .ti-arrow-right:hover {
+  transform: scale(1.05);
+  background: #EAEAEA;
+}
+
+.ti-arrow-left {
+  left: 0;
+}
+
+.ti-arrow-right {
+  left: 1020px; /* 1088 - 68 */
+}
+
+/* Slider Cards */
+.ti-slider-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ti-card {
+  position: absolute;
+  border-radius: 26px;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.ti-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 26px;
+}
+
+.ti-card-center {
+  width: 398px;
+  height: 623px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  z-index: 1;
+}
+
+.ti-card-left {
+  width: 287px;
+  height: 454px;
+  left: 44px;
+  top: 87px;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.ti-card-right {
+  width: 287px;
+  height: 454px;
+  left: 756px;
+  top: 87px;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.ti-card-hidden {
+  width: 287px;
+  height: 454px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  top: 87px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Play & Mute Button Overlays */
+.ti-play-btn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border: 0.666667px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+  border-radius: 32px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: width 0.3s ease, background 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.ti-play-btn:not(.ti-play-btn-active):hover {
+  width: 96px;
+}
+
+.ti-play-btn.ti-play-btn-active {
+  width: 106px;
+}
+
+.ti-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.ti-play-text {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 11px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.ti-play-text.ti-play-text-hover {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-left: 0;
+  transition: max-width 0.2s ease, opacity 0.2s ease, margin-left 0.2s ease;
+}
+
+.ti-play-btn:not(.ti-play-btn-active):hover .ti-play-text-hover {
+  max-width: 60px;
+  opacity: 1;
+  margin-left: 6px;
+}
+
+.ti-play-btn-active .ti-play-text {
+  max-width: 60px;
+  opacity: 1;
+  margin-left: 6px;
+}
+
+.ti-play-btn-active:hover .ti-icon-paused,
+.ti-play-btn-active:hover .ti-text-paused {
+  display: none !important;
+}
+
+.ti-play-btn-active:hover .ti-icon-resume,
+.ti-play-btn-active:hover .ti-text-resume {
+  display: block !important;
+}
+
+.ti-mute-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 0.5px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.ti-mute-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Pagination */
+.ti-pagination {
+  position: absolute;
+  top: 640px; /* From Figma: top: 640px */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px; /* Calculated from figma positions */
+  align-items: center;
+}
+
+.ti-dot {
+  height: 10px;
+  background: #BCBCBC;
+  border-radius: 49px;
+  cursor: pointer;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.ti-dot:not(.ti-dot-active) {
+  width: 10px;
+}
+
+.ti-dot.ti-dot-active {
+  width: 25px;
+  background: #000000;
+}

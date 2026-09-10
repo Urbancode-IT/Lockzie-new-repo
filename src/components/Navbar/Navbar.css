@@ -1,0 +1,484 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 63px;
+  background: rgba(183, 183, 183, 0.39);
+  -webkit-backdrop-filter: blur(6.25px);
+  backdrop-filter: blur(6.25px);
+  transform: translateZ(0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-logo {
+  margin-left: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  width: 163px;
+  height: 45px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0 80px 0 0;
+  padding: 0;
+  gap: 17px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-family: 'Satoshi', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 23px;
+  color: #FFFFFF;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.nav-links li a:hover {
+  opacity: 0.8;
+}
+
+.nav-item-active {
+  background: #1A1A1A;
+  border-radius: 106px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  padding: 0 20px;
+}
+
+.nav-item-active > a {
+  height: 32px;
+}
+
+/* Remove active highlight when another nav item is hovered */
+.nav-links:hover li.nav-item-active:not(:hover) {
+  background: transparent !important;
+}
+.navbar:not(.scrolled) .nav-links:hover li.nav-item-active:not(:hover) > a {
+  color: #FFFFFF !important;
+}
+.navbar.scrolled .nav-links:hover li.nav-item-active:not(:hover) > a {
+  color: #0A0A0A !important;
+}
+
+/* Scrolled state styling */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.navbar.scrolled .nav-links li:not(.nav-item-active) a {
+  color: #0A0A0A;
+}
+
+.navbar.scrolled .nav-item-active {
+  background: #0A0A0A;
+}
+
+.navbar.scrolled .nav-item-active a {
+  color: #FFFFFF;
+}
+
+/* Mega menu additions */
+.nav-links > li.services-li {
+  padding: 0 20px;
+  border-radius: 106px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.nav-links > li.services-li > a {
+  padding: 0;
+}
+
+.nav-links > li.services-li:hover {
+  background: #1A1A1A;
+}
+
+.nav-links > li.services-li:hover > a {
+  color: #FFFFFF !important;
+}
+
+.navbar.scrolled .nav-links > li.services-li:hover {
+  background: #0A0A0A;
+}
+
+.navbar.scrolled .nav-links > li.services-li:hover > a {
+  color: #FFFFFF !important;
+}
+
+.mega-menu {
+  position: absolute;
+  top: 63px;
+  left: 0;
+  width: 100%;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  padding: 30px 40px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1001;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+/* Create a transparent bridge so hover isn't lost */
+.mega-menu::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+}
+
+.nav-links li.services-li:hover .mega-menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mega-menu-inner {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  gap: 60px;
+}
+
+.mega-menu-left {
+  flex: 2;
+}
+
+.mega-menu-right {
+  flex: 1.2;
+  padding-left: 50px;
+  border-left: 1px solid #EAEAEA;
+}
+
+.mega-menu-main-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #0A0A0A;
+  margin-bottom: 24px;
+  margin-top: 0;
+  border-bottom: 1px solid #EAEAEA;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.hair-extensions-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.mega-menu-group {
+  margin-bottom: 15px;
+}
+
+.mega-menu-group h4 {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #0A0A0A;
+  margin-bottom: 16px;
+  margin-top: 0;
+  text-align: left;
+}
+
+.mega-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mega-menu ul.catalogue-list {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 10px 40px;
+  justify-content: center;
+}
+
+.mega-menu ul li a {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #737373 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 0;
+  height: 32px;
+}
+
+.mega-menu ul li a:hover {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    margin: 0 20px 0 0;
+    gap: 10px;
+  }
+}
+
+.mobile-menu-toggle {
+  display: none;
+  cursor: pointer;
+  margin-right: 20px;
+  z-index: 1002;
+}
+
+.hamburger {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled .hamburger span {
+  background-color: #0A0A0A;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+  background-color: #0A0A0A;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+  background-color: #0A0A0A;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo {
+    margin-left: 20px;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #FFFFFF;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 30px 30px 30px;
+    margin: 0;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    overflow-y: auto;
+  }
+  
+  .nav-links.mobile-active {
+    right: 0;
+  }
+  
+  .nav-links li {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .nav-links li a {
+    color: #0A0A0A !important;
+    justify-content: flex-start;
+    padding: 10px 0;
+    font-size: 18px;
+  }
+  
+  .nav-item-active {
+    background: transparent;
+    padding: 0;
+  }
+  
+  .nav-item-active > a {
+    font-weight: 600;
+    color: #000000 !important;
+  }
+  
+  .nav-links > li.services-li {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 0;
+  }
+  
+  .mega-menu {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 15px 0 0 15px;
+    box-shadow: none;
+    display: none;
+    visibility: visible;
+    opacity: 1;
+    background: transparent;
+  }
+  
+  /* On mobile, we can just show the sub-menu if they click, but for simplicity let's keep it visible under Services */
+  .nav-links li.services-li:hover .mega-menu,
+  .nav-links li.services-li:active .mega-menu {
+    display: block;
+  }
+  
+  .mega-menu-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .mega-menu-left, .mega-menu-right {
+    padding: 0;
+    border: none;
+  }
+  
+  .hair-extensions-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .mega-menu ul.catalogue-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar-book-now-li {
+    margin-left: 0;
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+/* Book Now Button */
+.navbar-book-now-li {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.book-now-btn {
+  box-sizing: border-box;
+  position: relative;
+  width: 122px;
+  height: 43px;
+  padding: 0 !important;
+  background: linear-gradient(180deg, #000000 0%, #676767 100%);
+  border: 1px solid #FFFFFF;
+  box-shadow: 0px 1px 7.2px rgba(0, 0, 0, 0.17), inset 0px 1.5px 0px rgba(255, 255, 255, 0.9);
+  border-radius: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  animation: button-pop 4s infinite;
+}
+
+.book-now-btn:hover {
+  animation: none;
+  transform: scale(1.05);
+  opacity: 1 !important;
+}
+
+.book-now-text {
+  font-family: 'Satoshi', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #FFFFFF;
+  margin-right: 6px;
+}
+
+.book-now-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.shining-effect {
+  position: absolute;
+  width: 7px;
+  height: 85px;
+  top: -28px;
+  background: rgba(217, 217, 217, 0.58);
+  filter: blur(3.3px);
+  transform: matrix(0.87, 0.5, 0.5, -0.87, 0, 0);
+  animation: shine-sweep 4s infinite;
+  pointer-events: none;
+}
+
+@keyframes shine-sweep {
+  0% { left: -50px; }
+  4% { left: -50px; }
+  46% { left: 150px; }
+  54% { left: 150px; }
+  96% { left: -50px; }
+  100% { left: -50px; }
+}
+
+@keyframes button-pop {
+  0% { transform: scale(0.93); }
+  4% { transform: scale(1); }
+  46% { transform: scale(1); }
+  50% { transform: scale(0.93); }
+  54% { transform: scale(1); }
+  96% { transform: scale(1); }
+  100% { transform: scale(0.93); }
+}

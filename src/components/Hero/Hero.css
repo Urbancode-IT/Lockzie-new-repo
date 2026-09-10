@@ -1,0 +1,190 @@
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 1024px;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 0.8s ease-in-out, transform 8s linear;
+  z-index: 1;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1.08); /* Slow zoom for Ken Burns effect */
+}
+
+.hero-content-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-text-content {
+  margin-top: 150px; /* Offset for navbar */
+  color: #FFFFFF;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif; /* A common font for this kind of luxury serif style */
+  font-size: 80px;
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.title-regular {
+  font-style: normal;
+}
+
+.title-italic {
+  font-style: italic;
+}
+
+.hero-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation Arrows */
+.hero-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.hero-container:hover .hero-nav-btn {
+  opacity: 1;
+}
+
+.hero-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.hero-nav-btn.left {
+  left: 40px;
+}
+
+.hero-nav-btn.right {
+  right: 40px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 80px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  width: 100%;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot.active {
+  background: #FFFFFF;
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    height: 800px;
+  }
+  .hero-title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    height: 600px;
+  }
+  .hero-title {
+    font-size: 40px;
+  }
+  .hero-description {
+    font-size: 16px;
+  }
+  .hero-text-content {
+    margin-top: 80px;
+  }
+  .hero-nav-btn {
+    opacity: 1; /* Always visible on touch devices */
+    width: 44px;
+    height: 44px;
+  }
+  .hero-nav-btn.left {
+    left: 16px;
+  }
+  .hero-nav-btn.right {
+    right: 16px;
+  }
+}

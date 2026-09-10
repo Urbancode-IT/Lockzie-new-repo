@@ -1,0 +1,405 @@
+.haircut-page {
+  min-height: 100vh;
+  background-color: #FFFFFF;
+}
+
+.haircut-hero {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 603px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url('https://res.cloudinary.com/r0vgotvj/image/upload/v1789015944/Hair_cut_hero_1_webp.webp');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.haircut-hero-content {
+  text-align: center;
+  padding-top: 50px; /* Slight offset for navbar */
+}
+
+.haircut-hero h1 {
+  font-family: 'Satoshi', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 110px;
+  line-height: 1;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1024px) {
+  .haircut-hero h1 {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .haircut-hero {
+    height: 400px;
+  }
+  .haircut-hero h1 {
+    font-size: 60px;
+  }
+}
+
+.precision-haircut-section {
+  width: 100%;
+  background: #FFFFFF;
+  padding: 108px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.precision-haircut-container {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  gap: 74px;
+  padding: 0 90px;
+  box-sizing: border-box;
+}
+
+.precision-image-wrapper {
+  flex-shrink: 0;
+  width: 556px;
+  height: 506px;
+  border-radius: 32px;
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.precision-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.precision-text-content {
+  flex-grow: 1;
+  max-width: 596px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.precision-text-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 67px;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 38px;
+}
+
+.precision-text-content p {
+  font-family: 'Satoshi', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  color: #000000;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .precision-haircut-container {
+    padding: 0 40px;
+    gap: 40px;
+  }
+  .precision-image-wrapper {
+    width: 450px;
+    height: 410px;
+  }
+  .precision-text-content h2 {
+    font-size: 50px;
+    line-height: 56px;
+  }
+}
+
+@media (max-width: 992px) {
+  .precision-haircut-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .precision-text-content h2 {
+    font-size: 44px;
+    line-height: 50px;
+    text-align: center;
+  }
+  .precision-text-content p {
+    text-align: center;
+  }
+  .precision-image-wrapper {
+    width: 100%;
+    max-width: 556px;
+  }
+}
+
+@media (max-width: 768px) {
+  .precision-haircut-section {
+    padding: 60px 0;
+  }
+  .precision-haircut-container {
+    padding: 0 20px;
+  }
+  .precision-text-content h2 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  .precision-text-content p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+.why-choose-haircut-section {
+  width: 100%;
+  background: #2A2A2A;
+  padding: 108px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.why-choose-container {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 74px;
+  padding: 0 90px;
+  box-sizing: border-box;
+}
+
+.why-choose-text-content {
+  flex-grow: 1;
+  max-width: 596px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.why-choose-text-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 66px;
+  color: #FFFFFF;
+  margin-top: 0;
+  margin-bottom: 38px;
+}
+
+.why-choose-text-content ul {
+  list-style-type: disc;
+  padding-left: 24px;
+  margin: 0;
+}
+
+.why-choose-text-content li {
+  font-family: 'Satoshi', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  color: #FFFFFF;
+}
+
+.why-choose-image-wrapper {
+  flex-shrink: 0;
+  width: 556px;
+  height: 506px;
+  border-radius: 32px;
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.why-choose-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .why-choose-container {
+    padding: 0 40px;
+    gap: 40px;
+  }
+  .why-choose-image-wrapper {
+    width: 450px;
+    height: 410px;
+  }
+  .why-choose-text-content h2 {
+    font-size: 50px;
+    line-height: 56px;
+  }
+}
+
+@media (max-width: 992px) {
+  .why-choose-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .why-choose-text-content h2 {
+    font-size: 44px;
+    line-height: 50px;
+    text-align: center;
+  }
+  .why-choose-text-content ul {
+    text-align: left;
+    display: inline-block;
+  }
+  .why-choose-image-wrapper {
+    width: 100%;
+    max-width: 556px;
+  }
+  .haircut-services-container {
+    flex-direction: column;
+    text-align: left;
+  }
+  .haircut-services-image-wrapper {
+    width: 100%;
+    max-width: 509px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-choose-haircut-section {
+    padding: 60px 0;
+  }
+  .why-choose-container {
+    padding: 0 20px;
+  }
+  .why-choose-text-content h2 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  .why-choose-text-content li {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+.haircut-services-section {
+  width: 100%;
+  background: rgba(229, 229, 229, 0.38);
+  padding: 102px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.haircut-services-container {
+  width: 100%;
+  max-width: 1125px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.haircut-services-text-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.haircut-services-text-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 39px;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 73px;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.service-item.inactive {
+  opacity: 0.58;
+}
+
+.service-dash {
+  width: 18px;
+  height: 5px;
+  background: #000000;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.service-name {
+  font-family: 'Satoshi', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 39px;
+  color: #000000;
+  display: inline-block;
+}
+
+.service-item.active .service-name {
+  border-bottom: 1px solid #000000;
+  padding-bottom: 4px;
+}
+
+.haircut-services-image-wrapper {
+  flex-shrink: 0;
+  width: 509px;
+  height: 520px;
+  border-radius: 17px;
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.17);
+  overflow: hidden;
+}
+
+.haircut-services-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .haircut-services-image-wrapper {
+    width: 400px;
+    height: 410px;
+  }
+}
+
+@media (max-width: 768px) {
+  .haircut-services-section {
+    padding: 60px 0;
+  }
+  .haircut-services-text-content h2 {
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 40px;
+  }
+  .service-name {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}

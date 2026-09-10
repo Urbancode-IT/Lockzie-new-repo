@@ -1,0 +1,156 @@
+.faq-section {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 120px 80px;
+  box-sizing: border-box;
+}
+
+.faq-header {
+  max-width: 800px;
+  margin: 0 auto 64px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.faq-label {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 11px;
+  color: #737373;
+  margin-bottom: 16px;
+}
+
+.faq-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: -0.6px;
+  color: #0A0A0A;
+  margin: 0 0 24px 0;
+}
+
+.faq-subheading {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #6B6B6B;
+  max-width: 615px;
+  margin: 0;
+}
+
+.faq-list-container {
+  max-width: 816px;
+  margin: 0 auto;
+  border-top: 1px solid #E7E5E4;
+  border-bottom: 1px solid #E7E5E4;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #E7E5E4;
+  cursor: pointer;
+  padding: 32px 0;
+}
+
+.faq-item:first-child {
+  border-top: none;
+}
+
+.faq-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.faq-question {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.24px;
+  color: #0A0A0A;
+  margin: 0;
+  padding-left: 0;
+}
+
+.faq-plus-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(10, 10, 10, 0.2);
+  border-radius: 9999px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.2s, transform 0.3s ease;
+}
+
+.faq-item:hover .faq-plus-btn {
+  border-color: rgba(10, 10, 10, 0.5);
+}
+
+.faq-answer {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: #525252;
+  margin-top: 16px;
+  padding-right: 60px; /* Leaves space below the button to look neat */
+  animation: fadeInDown 0.3s ease;
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+
+/* 
+  When the item is open, you can simply rotate the icon 
+  or change it to a minus (done in JS) 
+*/
+.faq-item.open .faq-icon {
+  /* We changed the SVG path to a minus in JS when open, 
+     so rotating it 180deg looks nice too */
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 60px 20px;
+  }
+  .faq-heading {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  .faq-question {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .faq-answer {
+    font-size: 14px;
+    padding-right: 0;
+  }
+}

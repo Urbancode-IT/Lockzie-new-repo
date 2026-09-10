@@ -1,0 +1,256 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
+
+.story-section {
+  width: 100%;
+  position: relative;
+  background-color: #FAFAF9;
+  padding-bottom: 40px;
+  overflow: hidden;
+}
+
+/* Marquee Banner */
+.marquee-banner {
+  width: 100%;
+  height: 60px;
+  background: #F9F9F9; /* Slight background just in case, though Figma didn't specify */
+  border-bottom: 1px solid #EAEAEA;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  animation: scroll-left 30s linear infinite;
+  padding-left: 24px;
+}
+
+.marquee-content span {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #404040;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 48px; /* space between items */
+}
+
+.marquee-content .star {
+  color: #A3A3A3;
+  margin-left: 48px;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Layout */
+.story-content-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 120px 80px 0 80px;
+  position: relative;
+}
+
+.story-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+/* Left Column: Image */
+.story-image-container {
+  position: relative;
+  width: 446.67px;
+  height: 640px;
+}
+
+.story-image {
+  width: 100%;
+  height: 100%;
+  background: url('https://res.cloudinary.com/r0vgotvj/image/upload/v1/homepage_founder_image_webp.webp') center/cover no-repeat;
+  border-radius: 26px;
+}
+
+/* Floating Card */
+.floating-card {
+  box-sizing: border-box;
+  position: absolute;
+  width: 209.4px;
+  height: 108.21px;
+  right: -24px;
+  bottom: -24px;
+  background: #FFFFFF;
+  border: 0.61px solid #E5E5E5;
+  box-shadow: 0px 8px 10px -6px rgba(0, 0, 0, 0.1), 0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-subtitle {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #737373;
+  margin-bottom: 4px;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #0A0A0A;
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+
+.card-details {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #737373;
+  margin: 0;
+}
+
+/* Right Column: Text Content */
+.story-text-container {
+  flex: 1;
+  max-width: 700px;
+  margin-left: 180px;
+  padding-top: 30px;
+}
+
+.story-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.label-line {
+  width: 40px;
+  height: 1px;
+  background-color: #A3A3A3;
+}
+
+.label-text {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #737373;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.story-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -1.6px;
+  color: #0A0A0A;
+  margin: 0 0 40px 0;
+}
+
+.story-paragraphs p {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px; /* 156% */
+  color: #404040;
+  margin: 0 0 20px 0;
+  max-width: 533px;
+  text-align: justify;
+}
+
+/* Bottom Quote */
+.story-quote-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 80px 0 40px 0;
+}
+
+.story-quote {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 56px;
+  letter-spacing: -1.2px;
+  color: #0A0A0A;
+  margin: 0 0 32px 0;
+}
+
+.quote-author {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16px;
+  color: #737373;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .story-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .story-text-container {
+    margin-left: 0;
+    margin-top: 80px;
+  }
+  
+  .story-heading {
+    font-size: 48px;
+    line-height: 52px;
+  }
+  
+  .story-quote {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  
+  .floating-card {
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-content-wrapper {
+    padding: 60px 20px 0 20px;
+  }
+  .story-image-container {
+    width: 100%;
+    max-width: 446px;
+    height: 400px;
+  }
+  .story-heading {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  .story-quote {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .floating-card {
+    right: 10px;
+    bottom: -10px;
+    width: 160px;
+    padding: 15px;
+  }
+}
