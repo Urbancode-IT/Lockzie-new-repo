@@ -156,6 +156,14 @@
   appearance: none;
 }
 
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover, 
+.form-group input:-webkit-autofill:focus, 
+.form-group input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #FFFFFF inset !important;
+  -webkit-text-fill-color: #6B6B6B !important;
+}
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #9CA3AF;
