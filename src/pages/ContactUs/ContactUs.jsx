@@ -15,6 +15,45 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const formData = new FormData(form.current);
+    const fullName = formData.get('full_name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    if (!fullName || fullName.trim() === '') {
+      Swal.fire({
+        title: 'Required Field',
+        text: 'Please enter your Full Name.',
+        icon: 'warning',
+        confirmButtonColor: '#0A0A0A',
+        customClass: { popup: 'sweet-popup' }
+      });
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      Swal.fire({
+        title: 'Invalid Input',
+        text: 'Please enter a valid Email Address.',
+        icon: 'warning',
+        confirmButtonColor: '#0A0A0A',
+        customClass: { popup: 'sweet-popup' }
+      });
+      return;
+    }
+
+    if (!message || message.trim() === '') {
+      Swal.fire({
+        title: 'Required Field',
+        text: 'Please tell us how we can help you in the message box.',
+        icon: 'warning',
+        confirmButtonColor: '#0A0A0A',
+        customClass: { popup: 'sweet-popup' }
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     const messages = [
       "Your message has reached us beautifully.",
@@ -151,7 +190,7 @@ const ContactUs = () => {
                 <input type="hidden" name="show_extra_fields" value="none" />
               </div>
               <button type="submit" className="contact-submit-button" disabled={isSubmitting}>
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                <span className="btn-text">{isSubmitting ? 'Sending...' : 'Send Message'}</span>
               </button>
             </form>
           </div>
