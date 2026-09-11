@@ -59,6 +59,72 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    const formData = new FormData(form.current);
+    const fullName = formData.get('full_name');
+    const phoneNumber = formData.get('phone_number');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    if (!fullName || fullName.trim() === '') {
+      Swal.fire({
+        title: 'Required Field',
+        text: 'Please enter your Full Name.',
+        icon: 'warning',
+        confirmButtonColor: '#0A0A0A',
+        customClass: { popup: 'sweet-popup' }
+      });
+      return;
+    }
+
+    const phoneRegex = /^[0-9+\-\s()]{10,20}$/;
+    const numericPhone = phoneNumber ? phoneNumber.replace(/\D/g, '') : '';
+    
+    if (!phoneNumber || !phoneRegex.test(phoneNumber) || numericPhone.length < 10) {
+      Swal.fire({
+        title: 'Invalid Input',
+        text: 'Please enter a valid Phone Number with at least 10 digits.',
+        icon: 'warning',
+        confirmButtonColor: '#0A0A0A',
+        customClass: { popup: 'sweet-popup' }
+      });
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      Swal.fire({
+        title: 'Invalid Input',
+        text: 'Please enter a valid Email Address.',
+        icon: 'warning',
+        confirmButtonColor: '#0A0A0A',
+        customClass: { popup: 'sweet-popup' }
+      });
+      return;
+    }
+
+    if (!selectedService) {
+      Swal.fire({
+        title: 'Required Field',
+        text: 'Please select a Service you are interested in.',
+        icon: 'warning',
+        confirmButtonColor: '#0A0A0A',
+        customClass: { popup: 'sweet-popup' }
+      });
+      return;
+    }
+
+    if (!message || message.trim() === '') {
+      Swal.fire({
+        title: 'Required Field',
+        text: 'Please tell us a bit about yourself in the message box.',
+        icon: 'warning',
+        confirmButtonColor: '#0A0A0A',
+        customClass: { popup: 'sweet-popup' }
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     const serviceKey = selectedService || "default";
     const availableTaglines = taglines[serviceKey] || taglines.default;
@@ -211,7 +277,7 @@ const ContactForm = () => {
             </div>
 
             <button type="submit" className="submit-btn" disabled={isSubmitting}>
-              {isSubmitting ? 'Sending...' : 'Submit Enquiry'}
+              <span className="btn-text">{isSubmitting ? 'Sending...' : 'Submit Enquiry'}</span>
             </button>
           </form>
         </div>

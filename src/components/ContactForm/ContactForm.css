@@ -252,14 +252,30 @@
   font-size: 20px;
   cursor: pointer;
   margin-top: 16px;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.submit-btn .btn-text {
+  display: inline-block;
 }
 
 .submit-btn:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+}
+
+.submit-btn:hover .btn-text {
+  animation: btnTextSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes btnTextSlide {
+  0% { transform: translateY(0); opacity: 1; }
+  49% { transform: translateY(-100%); opacity: 0; }
+  50% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
 @media (max-width: 1024px) {
