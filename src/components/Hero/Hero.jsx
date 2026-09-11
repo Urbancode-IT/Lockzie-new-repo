@@ -8,21 +8,21 @@ const slides = [
     image: 'https://res.cloudinary.com/r0vgotvj/image/upload/v1/5ab6392d70b66795652e8f1c671aa915.jpg',
     titleRegular: 'Luxury Hair',
     titleItalic: 'Extensions',
-    description: 'Transform your look instantly with premium-quality hair extensions designed for seamless blending, lasting comfort, and confidence every day.'
+    description: 'Transform your look instantly with premium quality hair extensions designed for seamless blending, lasting comfort, and confidence every day.'
   },
   {
     id: 2,
     image: 'https://res.cloudinary.com/r0vgotvj/image/upload/v1/home_page_hero_section_slide_img_2.webp',
     titleRegular: 'Master Level',
     titleItalic: 'Training',
-    description: 'Elevate your skills with our exclusive academy. Learn the art of flawless installation from industry-leading experts.'
+    description: 'Elevate your skills with our exclusive academy. Learn the art of flawless installation from industry leading experts.'
   },
   {
     id: 3,
     image: 'https://res.cloudinary.com/r0vgotvj/image/upload/v1/hero_section_slide_img_3.webp',
     titleRegular: 'Customized',
     titleItalic: 'Perfection',
-    description: 'Every strand is meticulously color-matched and crafted to suit your unique lifestyle and aesthetic desires.'
+    description: 'Every strand is meticulously color matched and crafted to suit your unique lifestyle and aesthetic desires.'
   },
   {
     id: 4,

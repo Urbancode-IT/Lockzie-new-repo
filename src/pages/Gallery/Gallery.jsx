@@ -116,14 +116,14 @@ const StudioVideo = ({ src, id, activeVideoId, onToggleAudio }) => {
 const getOverlayContent = (category, index) => {
   if (category === 'Clip In Extensions') {
     const content = [
-      { title: 'Seamless Clip-Ins', desc: 'Experience instant glamour with our invisible seamless clip-in extensions. Designed to give you luxurious length and breathtaking volume in minutes without any damage.' },
-      { title: '1 Piece to 7 Pieces Set', desc: 'Ultimate versatility for any occasion. Mix and match our premium 1 to 7 pieces clip-in sets to achieve your desired volume and length effortlessly.' },
-      { title: 'Buns', desc: 'Achieve an elegant, voluminous bun in seconds. Our high-quality clip-in buns are perfect for a quick, sophisticated updo.' },
-      { title: 'Bangs', desc: 'Instantly transform your style with clip-in bangs. A zero-commitment way to add fringe and frame your face beautifully.' },
-      { title: 'Ponytail', desc: 'Get that thick, cascading ponytail you have always wanted. Easy to attach and securely wraps for a glamorous, everyday look.' },
-      { title: 'Seamless Clip-Ins', desc: 'Our ultra-thin seamless clip-ins lie completely flat against your scalp, offering an undetectable blend and maximum comfort.' },
-      { title: '1 Piece to 7 Pieces Set', desc: 'Customize your thickness and length dynamically. Our 1 to 7 piece luxury sets blend flawlessly with your natural hair.' },
-      { title: 'Ponytail', desc: 'Combine our luxurious ponytail clip-ins for the ultimate, head-turning volume and breathtaking length.' }
+      { title: 'Seamless Clip-Ins', desc: 'Experience instant glamour with our invisible seamless clip-in extensions. Designed to give you luxurious length and breathtaking volume in minutes without any damage.', path: '/seamless-clip-ins' },
+      { title: '1 Piece to 7 Pieces Set', desc: 'Ultimate versatility for any occasion. Mix and match our premium 1 to 7 pieces clip-in sets to achieve your desired volume and length effortlessly.', path: '/clip-in-sets' },
+      { title: 'Buns', desc: 'Achieve an elegant, voluminous bun in seconds. Our high-quality clip-in buns are perfect for a quick, sophisticated updo.', path: '/buns' },
+      { title: 'Bangs', desc: 'Instantly transform your style with clip-in bangs. A zero-commitment way to add fringe and frame your face beautifully.', path: '/bangs' },
+      { title: 'Ponytail', desc: 'Get that thick, cascading ponytail you have always wanted. Easy to attach and securely wraps for a glamorous, everyday look.', path: '/ponytail' },
+      { title: 'Seamless Clip-Ins', desc: 'Our ultra-thin seamless clip-ins lie completely flat against your scalp, offering an undetectable blend and maximum comfort.', path: '/seamless-clip-ins' },
+      { title: '1 Piece to 7 Pieces Set', desc: 'Customize your thickness and length dynamically. Our 1 to 7 piece luxury sets blend flawlessly with your natural hair.', path: '/clip-in-sets' },
+      { title: 'Ponytail', desc: 'Combine our luxurious ponytail clip-ins for the ultimate, head-turning volume and breathtaking length.', path: '/ponytail' }
     ];
     return content[index];
   }
@@ -144,28 +144,28 @@ const getOverlayContent = (category, index) => {
 
   if (category === 'Toppers') {
     const content = [
-      { title: 'Silk Base', desc: 'Achieve the most natural-looking scalp with our premium silk base toppers. Designed for breathability and an undetectable parting line.' },
-      { title: 'Mono Base', desc: 'Experience incredible durability and versatile styling. Monofilament base toppers allow multi-directional parting for a flawless, natural appearance.' },
-      { title: 'Lace Base', desc: 'Enjoy maximum comfort and a lightweight feel. Our breathable lace base toppers seamlessly integrate with your natural hair for effortless volume.' },
-      { title: 'Front Line HD Lace Base', desc: 'The ultimate invisible hairline. HD lace instantly melts into your skin tone, providing the most realistic and undetectable front edge.' },
-      { title: 'Silk Base', desc: 'Transform your thinning crown with luxurious volume. Our human hair silk base toppers mimic natural hair growth perfectly for a stunning finish.' },
-      { title: 'Mono Base', desc: 'Perfect for everyday wear, our mono base hairpieces offer a secure fit and a realistic scalp appearance that instantly builds your confidence.' },
-      { title: 'Lace Base', desc: 'Designed for active lifestyles, these ultra-light lace toppers provide exceptional airflow and an incredibly natural, voluminous hair transformation.' },
-      { title: 'Front Line HD Lace Base', desc: 'Flawlessly conceal hair loss with high-definition lace technology. The ultra-sheer material creates an illusion of hair growing directly from your scalp.' }
+      { title: 'Silk Base', desc: 'Achieve the most natural-looking scalp with our premium silk base toppers. Designed for breathability and an undetectable parting line.', path: '/silk-base' },
+      { title: 'Mono Base', desc: 'Experience incredible durability and versatile styling. Monofilament base toppers allow multi-directional parting for a flawless, natural appearance.', path: '/mono-base' },
+      { title: 'Lace Base', desc: 'Enjoy maximum comfort and a lightweight feel. Our breathable lace base toppers seamlessly integrate with your natural hair for effortless volume.', path: '/lace-base' },
+      { title: 'Front Line HD Lace Base', desc: 'The ultimate invisible hairline. HD lace instantly melts into your skin tone, providing the most realistic and undetectable front edge.', path: '/hd-lace-base' },
+      { title: 'Silk Base', desc: 'Transform your thinning crown with luxurious volume. Our human hair silk base toppers mimic natural hair growth perfectly for a stunning finish.', path: '/silk-base' },
+      { title: 'Mono Base', desc: 'Perfect for everyday wear, our mono base hairpieces offer a secure fit and a realistic scalp appearance that instantly builds your confidence.', path: '/mono-base' },
+      { title: 'Lace Base', desc: 'Designed for active lifestyles, these ultra-light lace toppers provide exceptional airflow and an incredibly natural, voluminous hair transformation.', path: '/lace-base' },
+      { title: 'Front Line HD Lace Base', desc: 'Flawlessly conceal hair loss with high-definition lace technology. The ultra-sheer material creates an illusion of hair growing directly from your scalp.', path: '/hd-lace-base' }
     ];
     return content[index];
   }
 
   if (category === 'Wigs') {
     const content = [
-      { title: 'Front Lace', desc: 'Discover the ultimate natural hairline with our premium front lace wigs. Designed for a seamless blend, offering undetectable beauty and lightweight comfort.' },
-      { title: 'Silk Base', desc: 'Experience the most realistic scalp appearance. Our luxury silk base wigs mimic natural hair growth perfectly, allowing for versatile and confident styling.' },
-      { title: 'Full Lace', desc: 'Enjoy 360-degree styling freedom. High-quality full lace wigs offer maximum breathability and the flexibility to wear your hair in stunning updos.' },
-      { title: 'Front Lace', desc: 'Instantly transform your look with our meticulously crafted front lace units. Perfect for everyday wear, ensuring a secure fit and flawless hairline integration.' },
-      { title: 'Silk Base', desc: 'Elevate your style with exceptional volume and comfort. Silk base construction provides a true-to-life scalp illusion, making your wig completely undetectable.' },
-      { title: 'Full Lace', desc: 'The pinnacle of luxury hair replacement. Hand-tied full lace wigs provide unparalleled movement, natural density, and endless parting possibilities.' },
-      { title: 'Front Lace', desc: 'Achieve a glamorous, ready-to-wear style instantly. Our front lace designs offer brilliant texture, superior longevity, and a beautifully sheer front edge.' },
-      { title: 'Silk Base', desc: 'Say goodbye to visible knots. The multi-layered silk base technology ensures each strand looks as though it is growing directly from your own scalp.' }
+      { title: 'Front Lace', desc: 'Discover the ultimate natural hairline with our premium front lace wigs. Designed for a seamless blend, offering undetectable beauty and lightweight comfort.', path: '/front-lace-wigs' },
+      { title: 'Silk Base', desc: 'Experience the most realistic scalp appearance. Our luxury silk base wigs mimic natural hair growth perfectly, allowing for versatile and confident styling.', path: '/silk-base-wigs' },
+      { title: 'Full Lace', desc: 'Enjoy 360-degree styling freedom. High-quality full lace wigs offer maximum breathability and the flexibility to wear your hair in stunning updos.', path: '/full-lace-wigs' },
+      { title: 'Front Lace', desc: 'Instantly transform your look with our meticulously crafted front lace units. Perfect for everyday wear, ensuring a secure fit and flawless hairline integration.', path: '/front-lace-wigs' },
+      { title: 'Silk Base', desc: 'Elevate your style with exceptional volume and comfort. Silk base construction provides a true-to-life scalp illusion, making your wig completely undetectable.', path: '/silk-base-wigs' },
+      { title: 'Full Lace', desc: 'The pinnacle of luxury hair replacement. Hand-tied full lace wigs provide unparalleled movement, natural density, and endless parting possibilities.', path: '/full-lace-wigs' },
+      { title: 'Front Lace', desc: 'Achieve a glamorous, ready-to-wear style instantly. Our front lace designs offer brilliant texture, superior longevity, and a beautifully sheer front edge.', path: '/front-lace-wigs' },
+      { title: 'Silk Base', desc: 'Say goodbye to visible knots. The multi-layered silk base technology ensures each strand looks as though it is growing directly from your own scalp.', path: '/silk-base-wigs' }
     ];
     return content[index];
   }
@@ -376,6 +376,7 @@ const Gallery = () => {
                     }
                     customStyle.cursor = 'pointer';
                   } else if (activeCategory === 'Clip In Extensions') {
+                    customStyle.cursor = 'pointer';
                     if (idx === 0) {
                       customStyle.backgroundPosition = 'center -30px';
                     } else if (idx === 1) {
@@ -391,6 +392,7 @@ const Gallery = () => {
                       customStyle.backgroundPosition = 'center -19px';
                     }
                   } else if (activeCategory === 'Toppers') {
+                    customStyle.cursor = 'pointer';
                     if (idx === 0) {
                       customStyle.backgroundPosition = 'center 85%';
                     } else if (idx === 1) {
@@ -401,6 +403,7 @@ const Gallery = () => {
                       customStyle.backgroundPosition = 'calc(50% + 30px) center';
                     }
                   } else if (activeCategory === 'Wigs') {
+                    customStyle.cursor = 'pointer';
                     if (idx === 0) {
                       customStyle.backgroundPosition = 'center calc(15% - 8px)';
                     } else if (idx === 1) {
