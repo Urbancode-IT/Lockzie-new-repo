@@ -204,6 +204,16 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 1366px) and (min-width: 1025px) {
+  .story-text-container {
+    margin-left: 60px;
+  }
+  .story-heading {
+    font-size: 48px;
+    line-height: 58px;
+  }
+}
+
 @media (max-width: 1024px) {
   .story-layout {
     flex-direction: column;
@@ -213,11 +223,16 @@
   .story-text-container {
     margin-left: 0;
     margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .story-heading {
     font-size: 48px;
     line-height: 52px;
+    text-align: center;
+    max-width: 533px;
   }
   
   .story-quote {
@@ -225,8 +240,12 @@
     line-height: 48px;
   }
   
-  .floating-card {
-    right: 20px;
+  .story-label {
+    justify-content: center;
+  }
+  
+  .story-image {
+    background-position: top center;
   }
 }
 
@@ -242,9 +261,13 @@
   .story-image {
     background-position: top center;
   }
+  .story-label {
+    justify-content: center;
+  }
   .story-heading {
     font-size: 36px;
     line-height: 42px;
+    text-align: center;
   }
   .story-quote {
     font-size: 30px;
