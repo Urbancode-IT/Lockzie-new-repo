@@ -305,6 +305,10 @@
     flex-direction: column;
     align-items: center;
   }
+  .transformation-card:nth-child(1) .image-after {
+    background-position: center !important;
+    transform: scale(1.05) !important;
+  }
 }
 
 @media (max-width: 768px) {
