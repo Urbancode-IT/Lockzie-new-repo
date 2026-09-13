@@ -244,6 +244,11 @@
   }
   .consultation-card {
     width: calc(50% - 12px);
+    align-items: center;
+    text-align: center;
+  }
+  .card-title-row {
+    justify-content: center;
   }
   .consultation-card.popular-card {
     transform: none;
