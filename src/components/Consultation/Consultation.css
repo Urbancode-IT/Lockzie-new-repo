@@ -224,13 +224,20 @@
 }
 
 @media (max-width: 1024px) {
+  .consultation-label-container {
+    justify-content: center;
+  }
   .consultation-header-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+  }
+  .consultation-heading {
+    text-align: center;
   }
   .consultation-intro {
     margin-top: 32px;
     padding-bottom: 0;
+    text-align: center;
   }
   .consultation-cards-wrapper {
     flex-wrap: wrap;
