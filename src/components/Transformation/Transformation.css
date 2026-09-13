@@ -309,6 +309,11 @@
     background-position: center !important;
     transform: scale(1.05) !important;
   }
+  .transformation-card:nth-child(3) .image-before,
+  .transformation-card:nth-child(3) .image-after {
+    background-position: center !important;
+    transform: scale(1.05) !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -321,8 +326,12 @@
   }
   .transformation-card,
   .slider-container,
-  .slider-image {
+  .slider-image.image-after {
     width: 100%;
+    max-width: 384px;
+  }
+  .slider-image.image-before {
+    width: calc(100vw - 40px);
     max-width: 384px;
   }
 }
