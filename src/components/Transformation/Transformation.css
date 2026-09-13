@@ -285,13 +285,21 @@
 }
 
 @media (max-width: 1024px) {
+  .transformation-label-container {
+    justify-content: center;
+  }
   .transformation-header-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+  }
+  .transformation-heading {
+    text-align: center;
   }
   .transformation-intro {
     margin-top: 32px;
     padding-bottom: 0;
+    text-align: center;
+    max-width: 80%;
   }
   .transformation-cards-wrapper {
     flex-direction: column;
