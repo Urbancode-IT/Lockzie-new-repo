@@ -232,3 +232,10 @@
     line-height: 16px;
   }
 }
+
+@media (max-width: 360px) {
+  .service-card:nth-child(3) .service-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
