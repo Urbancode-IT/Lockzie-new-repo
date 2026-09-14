@@ -284,6 +284,12 @@
   color: #6B6B6B;
 }
 
+@media (max-width: 1360px) {
+  .transformation-section {
+    padding: 120px 20px;
+  }
+}
+
 @media (max-width: 1024px) {
   .transformation-label-container {
     justify-content: center;
