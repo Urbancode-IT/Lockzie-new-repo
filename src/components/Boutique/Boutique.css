@@ -140,6 +140,15 @@
 }
 
 @media (max-width: 1024px) {
+  .boutique-label-container {
+    justify-content: center;
+  }
+  .boutique-header-content {
+    justify-content: center;
+  }
+  .boutique-heading {
+    text-align: justify;
+  }
   .boutique-cards-wrapper {
     flex-direction: column;
     align-items: center;
