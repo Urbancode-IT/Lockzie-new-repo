@@ -235,7 +235,4 @@
     line-height: 24px;
     margin-bottom: 24px;
   }
-  .carousel-slide:nth-child(3) .review-text {
-    text-align: justify;
-  }
 }

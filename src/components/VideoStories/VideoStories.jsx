@@ -129,6 +129,7 @@ const VideoCard = ({ index, activeVideoIndex, onActivate, name, title, image, vi
 const VideoStories = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeVideoIndex, setActiveVideoIndex] = useState(null);
+  const [maxIndex, setMaxIndex] = useState(1);
 
   const stories = [
     { 
@@ -163,12 +164,36 @@ const VideoStories = () => {
     }
   ];
 
+  useEffect(() => {
+    const updateMaxIndex = () => {
+      const width = window.innerWidth;
+      let wrapperWidth;
+      if (width <= 768) {
+        wrapperWidth = width - 40; 
+      } else {
+        wrapperWidth = Math.min(1200, width - 160);
+      }
+      
+      const cardWidth = width <= 768 ? Math.min(284, wrapperWidth) : 284.01;
+      const gap = 21.33;
+      const visible = Math.max(1, Math.floor((wrapperWidth + gap) / (cardWidth + gap)));
+      const calculatedMaxIndex = Math.max(0, stories.length - visible);
+      
+      setMaxIndex(calculatedMaxIndex);
+      setCurrentIndex(prev => prev > calculatedMaxIndex ? calculatedMaxIndex : prev);
+    };
+
+    updateMaxIndex();
+    window.addEventListener('resize', updateMaxIndex);
+    return () => window.removeEventListener('resize', updateMaxIndex);
+  }, [stories.length]);
+
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : 0));
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev < stories.length - 4 ? prev + 1 : prev));
+    setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : prev));
   };
 
   return (
@@ -185,7 +210,7 @@ const VideoStories = () => {
               <path d="M15.8334 10H4.16669M4.16669 10L10 15.8333M4.16669 10L10 4.16666" stroke="#57534D" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-          <button className="vs-arrow-btn" onClick={handleNext} disabled={currentIndex >= stories.length - 4}>
+          <button className="vs-arrow-btn" onClick={handleNext} disabled={currentIndex >= maxIndex}>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.16669 10H15.8334M15.8334 10L10 4.16666M15.8334 10L10 15.8333" stroke="#57534D" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
