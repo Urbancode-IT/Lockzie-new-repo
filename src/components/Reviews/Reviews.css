@@ -213,10 +213,6 @@
   .carousel-container {
     padding: 0 40px;
   }
-  .review-text {
-    text-align: justify;
-    margin-bottom: 24px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -237,5 +233,6 @@
   .review-text {
     font-size: 16px;
     line-height: 24px;
+    margin-bottom: 24px;
   }
 }
