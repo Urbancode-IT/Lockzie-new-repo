@@ -214,7 +214,7 @@
     padding: 0 40px;
   }
   .review-text {
-    text-align: center;
+    text-align: justify;
     margin-bottom: 24px;
   }
 }
