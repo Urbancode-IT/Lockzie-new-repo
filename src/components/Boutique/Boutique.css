@@ -145,9 +145,10 @@
   }
   .boutique-header-content {
     justify-content: center;
+    align-items: center;
   }
   .boutique-heading {
-    text-align: justify;
+    text-align: center;
   }
   .boutique-cards-wrapper {
     flex-direction: column;
