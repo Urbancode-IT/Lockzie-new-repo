@@ -139,6 +139,12 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+@media (max-width: 1360px) {
+  .boutique-section {
+    padding: 120px 20px;
+  }
+}
+
 @media (max-width: 1024px) {
   .boutique-section {
     position: relative;
