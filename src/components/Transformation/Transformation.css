@@ -301,9 +301,20 @@
     text-align: center;
     max-width: 80%;
   }
+  .transformation-section {
+    padding: 80px 20px;
+  }
   .transformation-cards-wrapper {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .transformation-card {
+    width: calc(50% - 12px);
+    max-width: 384px;
+  }
+  .slider-container {
+    width: 100%;
   }
   .transformation-card:nth-child(1) .image-after {
     background-position: center !important;
@@ -324,6 +335,9 @@
     font-size: 36px;
     line-height: 42px;
   }
+}
+
+@media (max-width: 600px) {
   .transformation-card,
   .slider-container,
   .slider-image.image-after {
