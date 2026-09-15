@@ -157,6 +157,22 @@
 }
 
 @media (max-width: 1024px) {
+  .video-stories-section {
+    position: relative;
+  }
+  .video-stories-section::after {
+    content: 'Swipe \2192';
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #737373;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: vsSwipeAnim 2s infinite ease-in-out;
+  }
   .video-stories-cards-wrapper {
     flex-direction: column;
     align-items: center;
@@ -165,17 +181,30 @@
 
 @media (max-width: 768px) {
   .video-stories-section {
-    padding: 60px 20px;
+    padding: 60px 20px 80px 20px;
+  }
+  .video-stories-section::after {
+    bottom: 25px;
   }
   .video-stories-heading {
     font-size: 28px;
     line-height: 34px;
+  }
+  .video-stories-cards-wrapper {
+    width: 284.01px;
+    margin: 0 auto;
   }
   .video-card {
     width: 100%;
     max-width: 284px;
     height: 400px;
   }
+}
+
+@keyframes vsSwipeAnim {
+  0% { transform: translateX(-50%); }
+  50% { transform: translateX(calc(-50% + 15px)); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Fix for fullscreen video zoom issue */

@@ -232,12 +232,39 @@ const VideoStories = () => {
     return () => window.removeEventListener('resize', updateMaxIndex);
   }, [stories.length]);
 
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : 0));
   };
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : prev));
+  };
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+    
+    setTouchStart(null);
+    setTouchEnd(null);
   };
 
   return (
@@ -266,6 +293,9 @@ const VideoStories = () => {
         <div 
           className="video-stories-slider-track" 
           style={{ transform: `translateX(-${currentIndex * (284.01 + 21.33)}px)` }}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {stories.map((story, index) => (
             <VideoCard 
