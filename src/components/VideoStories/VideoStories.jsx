@@ -174,6 +174,7 @@ const VideoStories = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeVideoIndex, setActiveVideoIndex] = useState(null);
   const [maxIndex, setMaxIndex] = useState(1);
+  const [shiftAmount, setShiftAmount] = useState(305.34);
 
   const stories = [
     { 
@@ -211,20 +212,42 @@ const VideoStories = () => {
   useEffect(() => {
     const updateMaxIndex = () => {
       const width = window.innerWidth;
-      let wrapperWidth;
-      if (width <= 768) {
-        wrapperWidth = width - 40; 
+      const height = window.innerHeight;
+      let newVisible = 1;
+      
+      if (width < 768) {
+        newVisible = 1;
+      } else if (width === 768) { // iPad mini
+        newVisible = 3;
+      } else if (width === 820) { // iPad Air
+        newVisible = 2;
+      } else if (width === 912) { // Surface Pro 7
+        newVisible = 3;
+      } else if (width === 1024 && height >= 1000) { // iPad Pro
+        newVisible = 2;
+      } else if (width === 1024 && height < 1000) { // Nest Hub
+        newVisible = 3;
+      } else if (width === 1280) { // Nest Hub Max
+        newVisible = 4;
+      } else if (width > 1280) {
+        newVisible = 4;
+      } else if (width >= 768 && width < 1024) {
+        newVisible = 2;
       } else {
-        wrapperWidth = Math.min(1200, width - 160);
+        newVisible = 3;
       }
       
-      const cardWidth = width <= 768 ? Math.min(284, wrapperWidth) : 284.01;
-      const gap = 21.33;
-      const visible = Math.max(1, Math.floor((wrapperWidth + gap) / (cardWidth + gap)));
-      const calculatedMaxIndex = Math.max(0, stories.length - visible);
+      const calculatedMaxIndex = Math.max(0, stories.length - newVisible);
       
       setMaxIndex(calculatedMaxIndex);
       setCurrentIndex(prev => prev > calculatedMaxIndex ? calculatedMaxIndex : prev);
+
+      setTimeout(() => {
+        const card = document.querySelector('.video-card');
+        if (card) {
+          setShiftAmount(card.offsetWidth + 21.33);
+        }
+      }, 50);
     };
 
     updateMaxIndex();
@@ -292,7 +315,7 @@ const VideoStories = () => {
       <div className="video-stories-cards-wrapper">
         <div 
           className="video-stories-slider-track" 
-          style={{ transform: `translateX(-${currentIndex * (284.01 + 21.33)}px)` }}
+          style={{ transform: `translateX(-${currentIndex * shiftAmount}px)` }}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
