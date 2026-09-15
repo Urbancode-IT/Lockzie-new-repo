@@ -215,7 +215,11 @@ const VideoStories = () => {
       const height = window.innerHeight;
       let newVisible = 1;
       
-      if (width < 764) {
+      if (width < 536) {
+        newVisible = 1;
+      } else if (width >= 536 && width <= 544) { // Surface Duo
+        newVisible = 2;
+      } else if (width > 544 && width < 764) {
         newVisible = 1;
       } else if (width >= 764 && width <= 772) { // iPad mini
         newVisible = 3;

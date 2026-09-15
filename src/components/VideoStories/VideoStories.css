@@ -273,6 +273,19 @@
   }
 }
 
+/* Surface Duo (540px): 2 videos */
+@media (min-width: 536px) and (max-width: 544px) {
+  .video-stories-cards-wrapper {
+    width: 500px;
+    margin: 0 auto;
+  }
+  .video-card {
+    width: 239.33px !important;
+    min-width: 239.33px !important;
+    height: 425.5px !important;
+  }
+}
+
 @keyframes vsSwipeAnim {
   0% { transform: translateX(-50%); }
   50% { transform: translateX(calc(-50% + 15px)); }
