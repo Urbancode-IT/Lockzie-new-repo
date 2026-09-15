@@ -220,12 +220,10 @@ const VideoStories = () => {
       } else if (width === 768) { // iPad mini
         newVisible = 3;
       } else if (width === 820) { // iPad Air
-        newVisible = 2;
+        newVisible = 3;
       } else if (width === 912) { // Surface Pro 7
         newVisible = 3;
-      } else if (width === 1024 && height >= 1000) { // iPad Pro
-        newVisible = 2;
-      } else if (width === 1024 && height < 1000) { // Nest Hub
+      } else if (width === 1024) { // iPad Pro & Nest Hub
         newVisible = 3;
       } else if (width === 1280) { // Nest Hub Max
         newVisible = 4;

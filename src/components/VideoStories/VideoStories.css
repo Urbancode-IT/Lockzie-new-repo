@@ -193,19 +193,13 @@
   }
 }
 
-/* iPad Pro (1024x1366): 2 videos */
-@media (width: 1024px) and (min-height: 1000px) {
-  .video-stories-cards-wrapper {
-    width: 589.35px;
-    margin: 0 auto;
-  }
-}
-
-/* Nest Hub (1024x600): 3 videos */
-@media (width: 1024px) and (max-height: 999px) {
+/* iPad Pro & Nest Hub (1024px): 3 videos */
+@media (width: 1024px) {
+  .video-stories-header,
   .video-stories-cards-wrapper {
     width: 894.69px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -222,11 +216,16 @@
   }
 }
 
-/* iPad Air (820px): 2 videos */
+/* iPad Air (820px): 3 videos */
 @media (width: 820px) {
   .video-stories-cards-wrapper {
-    width: 589.35px;
+    width: 780px;
     margin: 0 auto;
+  }
+  .video-card {
+    width: 245.78px !important;
+    min-width: 245.78px !important;
+    height: 437px !important;
   }
 }
 
