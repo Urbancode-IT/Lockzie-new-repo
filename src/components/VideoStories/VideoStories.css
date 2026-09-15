@@ -177,3 +177,14 @@
     height: 400px;
   }
 }
+
+/* Fix for fullscreen video zoom issue */
+video:fullscreen {
+  object-fit: contain !important;
+}
+video:-webkit-full-screen {
+  object-fit: contain !important;
+}
+video:-ms-fullscreen {
+  object-fit: contain !important;
+}
