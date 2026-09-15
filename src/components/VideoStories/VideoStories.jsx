@@ -215,42 +215,51 @@ const VideoStories = () => {
       const height = window.innerHeight;
       let newVisible = 1;
       
-      if (width < 768) {
+      if (width < 764) {
         newVisible = 1;
-      } else if (width === 768) { // iPad mini
+      } else if (width >= 764 && width <= 772) { // iPad mini
         newVisible = 3;
-      } else if (width === 820) { // iPad Air
+      } else if (width >= 816 && width <= 824) { // iPad Air
         newVisible = 3;
-      } else if (width === 912) { // Surface Pro 7
+      } else if (width >= 908 && width <= 916) { // Surface Pro 7
         newVisible = 3;
-      } else if (width === 1024) { // iPad Pro & Nest Hub
+      } else if (width >= 1020 && width <= 1030) { // iPad Pro & Nest Hub
         newVisible = 3;
-      } else if (width === 1280) { // Nest Hub Max
+      } else if (width >= 1276 && width <= 1284) { // Nest Hub Max
         newVisible = 4;
-      } else if (width > 1280) {
+      } else if (width > 1284) {
         newVisible = 4;
-      } else if (width >= 768 && width < 1024) {
+      } else if (width >= 764 && width < 1024) {
         newVisible = 2;
       } else {
         newVisible = 3;
       }
       
       const calculatedMaxIndex = Math.max(0, stories.length - newVisible);
-      
       setMaxIndex(calculatedMaxIndex);
       setCurrentIndex(prev => prev > calculatedMaxIndex ? calculatedMaxIndex : prev);
-
-      setTimeout(() => {
-        const card = document.querySelector('.video-card');
-        if (card) {
-          setShiftAmount(card.offsetWidth + 21.33);
-        }
-      }, 50);
     };
 
     updateMaxIndex();
     window.addEventListener('resize', updateMaxIndex);
-    return () => window.removeEventListener('resize', updateMaxIndex);
+
+    // Watch for CSS-driven card width changes to keep shift logic perfectly synced
+    let resizeObserver;
+    const cardElement = document.querySelector('.video-card');
+    if (cardElement) {
+      resizeObserver = new ResizeObserver(entries => {
+        for (let entry of entries) {
+          // getBoundingClientRect is safer than offsetWidth for fractional widths
+          setShiftAmount(entry.target.getBoundingClientRect().width + 21.33);
+        }
+      });
+      resizeObserver.observe(cardElement);
+    }
+
+    return () => {
+      window.removeEventListener('resize', updateMaxIndex);
+      if (resizeObserver) resizeObserver.disconnect();
+    };
   }, [stories.length]);
 
   const [touchStart, setTouchStart] = useState(null);

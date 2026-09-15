@@ -163,13 +163,15 @@
 }
 
 /* Nest Hub Max (1280px): 4 videos */
-@media (width: 1280px) {
+@media (min-width: 1276px) and (max-width: 1284px) {
   .video-stories-section {
     padding: 120px 40px; 
   }
+  .video-stories-header,
   .video-stories-cards-wrapper {
     width: 1199.99px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -194,7 +196,7 @@
 }
 
 /* iPad Pro & Nest Hub (1024px): 3 videos */
-@media (width: 1024px) {
+@media (min-width: 1020px) and (max-width: 1030px) {
   .video-stories-header,
   .video-stories-cards-wrapper {
     width: 894.69px;
@@ -204,10 +206,12 @@
 }
 
 /* Surface Pro 7 (912px): 3 videos */
-@media (width: 912px) {
+@media (min-width: 908px) and (max-width: 916px) {
+  .video-stories-header,
   .video-stories-cards-wrapper {
     width: 872px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   .video-card {
     width: 276.44px !important;
@@ -217,10 +221,12 @@
 }
 
 /* iPad Air (820px): 3 videos */
-@media (width: 820px) {
+@media (min-width: 816px) and (max-width: 824px) {
+  .video-stories-header,
   .video-stories-cards-wrapper {
     width: 780px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   .video-card {
     width: 245.78px !important;
@@ -230,10 +236,12 @@
 }
 
 /* iPad Mini (768px): 3 videos */
-@media (width: 768px) {
+@media (min-width: 764px) and (max-width: 772px) {
+  .video-stories-header,
   .video-stories-cards-wrapper {
     width: 728px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   .video-card {
     width: 228.44px !important;
