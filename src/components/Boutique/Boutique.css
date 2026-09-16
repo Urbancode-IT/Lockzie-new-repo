@@ -190,7 +190,7 @@
   .boutique-card {
     flex: 0 0 calc(33.333% - 10.66px);
     max-width: calc(33.333% - 10.66px);
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     margin-bottom: 0;
   }
 }
