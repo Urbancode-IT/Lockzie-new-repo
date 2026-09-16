@@ -150,7 +150,7 @@
     position: relative;
   }
   .boutique-section::after {
-    content: 'Swipe \2192';
+    content: 'SWIPE \2192';
     position: absolute;
     bottom: 60px;
     left: 50%;
@@ -187,8 +187,8 @@
     display: none;
   }
   .boutique-card {
-    flex: 0 0 calc(100vw - 80px);
-    max-width: 384px;
+    flex: 0 0 100%;
+    max-width: 100%;
     scroll-snap-align: center;
     margin-bottom: 0;
   }
@@ -215,3 +215,4 @@
   50% { transform: translateX(calc(-50% + 15px)); }
   100% { transform: translateX(-50%); }
 }
+
