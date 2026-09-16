@@ -426,23 +426,65 @@
 @media (max-width: 768px) {
   .retail-popup-container {
     height: auto;
+    min-height: 250px;
     max-height: 95vh;
   }
   
   .retail-popup-content {
-    flex-direction: column;
+    flex-direction: row;
   }
   
   .retail-popup-right {
-    display: none;
+    display: flex;
+    flex: 0.85;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 0;
   }
   
   .retail-popup-left {
-    padding: 40px 20px;
+    padding: 20px 10px;
+    flex: 1.15;
   }
   
-  .retail-popup-bottom {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+  .retail-logo-text { font-size: 16px; letter-spacing: 1px; }
+  .retail-logo-sub { font-size: 6px; letter-spacing: 1px; margin-top: 2px; }
+  .retail-logo-heart-container { margin-top: 4px; gap: 6px; }
+  .retail-logo-line { width: 20px; }
+  .retail-logo-heart { font-size: 8px; }
+  
+  .retail-special-offer { font-size: 18px; margin-bottom: -5px; }
+  .retail-number { font-size: 55px; letter-spacing: -2px; }
+  .retail-percent { font-size: 20px; margin-left: 4px; }
+  .retail-off { font-size: 12px; letter-spacing: 1px; }
+  
+  .retail-pill { font-size: 8px; padding: 4px 8px; margin-top: 10px; margin-bottom: 12px; letter-spacing: 1px; }
+  
+  .retail-features { margin-bottom: 10px; }
+  .retail-feature svg { width: 14px; height: 14px; stroke-width: 1px; }
+  .retail-feature span { font-size: 5px; }
+  .retail-feature:not(:last-child)::after { height: 14px; }
+  
+  .retail-description { font-size: 8px; line-height: 12px; margin-bottom: 12px; }
+  
+  .retail-book-btn { font-size: 8px; padding: 8px 10px; gap: 6px; margin-bottom: 6px; }
+  .retail-arrow { font-size: 10px; }
+  .retail-terms { font-size: 5px; }
+  
+  .retail-gift-box { gap: 6px; margin-top: 8px; }
+  .retail-gift-icon { width: 20px; height: 20px; }
+  .retail-gift-icon svg { width: 10px; height: 10px; }
+  .retail-gift-text { font-size: 6px; }
+  
+  .retail-badge { width: 60px; height: 60px; bottom: 10px; right: 10px; padding: 2px; }
+  .retail-badge-enjoy { font-size: 10px; margin-bottom: 0px; }
+  .retail-badge-percent { font-size: 18px; margin-bottom: 0px; }
+  .retail-badge-percent span { font-size: 7px; }
+  .retail-badge-text { font-size: 4px; margin-bottom: 2px; }
+  
+  .retail-popup-bottom { padding: 8px 10px; flex-wrap: nowrap; gap: 4px; }
+  .retail-bottom-item svg { width: 10px; height: 10px; }
+  .retail-bottom-item span { font-size: 5px; letter-spacing: 0; }
+  
+  .retail-popup-close { width: 24px; height: 24px; top: 10px; right: 10px; }
+  .retail-popup-close svg { width: 10px; height: 10px; }
 }

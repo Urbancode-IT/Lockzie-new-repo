@@ -369,18 +369,59 @@
 @media (max-width: 768px) {
   .discount-popup-container {
     height: auto;
+    min-height: 250px;
     max-height: 95vh;
   }
   
   .discount-popup-content {
-    flex-direction: column;
+    flex-direction: row;
   }
   
   .discount-popup-right {
-    display: none;
+    display: flex;
+    flex: 0.85;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 0;
   }
   
   .discount-popup-left {
-    padding: 40px 20px;
+    padding: 20px 10px;
+    flex: 1.15;
   }
+  
+  .discount-logo-icon { font-size: 14px; margin-bottom: 2px; }
+  .discount-logo-text { font-size: 12px; letter-spacing: 2px; }
+  .discount-logo-sub { font-size: 5px; letter-spacing: 1px; }
+  
+  .discount-exclusive { font-size: 6px; gap: 6px; margin-bottom: 8px; }
+  .discount-exclusive-line { width: 12px; }
+  
+  .discount-number { font-size: 50px; letter-spacing: -2px; }
+  .discount-percent { font-size: 16px; margin-top: 4px; margin-left: 2px; }
+  .discount-off { font-size: 8px; margin-top: 0; }
+  
+  .discount-subtitle { font-size: 12px; }
+  .discount-sub-gold { font-size: 10px; margin-bottom: 8px; }
+  
+  .discount-description { font-size: 7px; line-height: 10px; margin-bottom: 10px; }
+  
+  .discount-features { margin-bottom: 10px; padding: 6px 0; max-width: 100%; }
+  .discount-feature svg { width: 12px; height: 12px; }
+  .discount-feature span { font-size: 4.5px; }
+  .discount-feature:not(:last-child)::after { height: 12px; }
+  
+  .discount-book-btn { font-size: 7px; padding: 6px 8px; gap: 4px; }
+  .discount-arrow { font-size: 8px; }
+  .discount-terms { font-size: 4px; margin-top: 4px; }
+  
+  .discount-badge { width: 50px; height: 50px; bottom: 10px; right: 10px; padding: 2px; }
+  .discount-badge-inner { padding: 4px; }
+  .discount-badge-inner span { font-size: 4px; margin-bottom: 1px; letter-spacing: 0; }
+  .discount-heart { width: 5px; height: 5px; }
+  
+  .discount-popup-bottom { height: 26px; gap: 6px; }
+  .discount-popup-bottom span { font-size: 6px; letter-spacing: 1px; }
+  
+  .discount-popup-close { width: 24px; height: 24px; top: 10px; right: 10px; }
+  .discount-popup-close svg { width: 10px; height: 10px; }
 }
