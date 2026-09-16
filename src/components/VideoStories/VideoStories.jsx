@@ -227,7 +227,7 @@ const VideoStories = () => {
         newVisible = 3;
       } else if (width >= 908 && width <= 916) { // Surface Pro 7
         newVisible = 3;
-      } else if (width >= 1020 && width <= 1030) { // iPad Pro & Nest Hub
+      } else if (width >= 1020 && width <= 1040) { // iPad Pro & Nest Hub
         newVisible = 3;
       } else if (width >= 1276 && width <= 1284) { // Nest Hub Max
         newVisible = 4;

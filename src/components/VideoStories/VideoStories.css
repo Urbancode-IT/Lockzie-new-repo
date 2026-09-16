@@ -196,7 +196,23 @@
 }
 
 /* iPad Pro & Nest Hub (1024px): 3 videos */
-@media (min-width: 1020px) and (max-width: 1030px) {
+@media (min-width: 1020px) and (max-width: 1040px) {
+  .video-stories-section {
+    padding: 80px 20px 100px 20px;
+  }
+  .video-stories-section::after {
+    content: 'Swipe \2192';
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #737373;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: vsSwipeAnim 2s infinite ease-in-out;
+  }
   .video-stories-header,
   .video-stories-cards-wrapper {
     width: 894.69px;
