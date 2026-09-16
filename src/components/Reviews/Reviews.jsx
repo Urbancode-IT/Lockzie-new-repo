@@ -57,7 +57,13 @@ const Reviews = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(3);
+  const [cardsPerView, setCardsPerView] = useState(() => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth <= 767) return 1;
+      if (window.innerWidth <= 1279) return 2;
+    }
+    return 3;
+  });
   const [isPaused, setIsPaused] = useState(false);
   
   // Touch / Drag State
@@ -72,9 +78,9 @@ const Reviews = () => {
   // Responsive logic
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 767) {
         setCardsPerView(1);
-      } else if (window.innerWidth <= 1024) {
+      } else if (window.innerWidth <= 1279) {
         setCardsPerView(2);
       } else {
         setCardsPerView(3);
