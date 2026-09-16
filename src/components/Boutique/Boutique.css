@@ -145,7 +145,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .boutique-section {
     position: relative;
   }
@@ -186,15 +186,47 @@
   .boutique-cards-wrapper::-webkit-scrollbar {
     display: none;
   }
+  /* Default to 3 cards for larger tablets (900px - 1280px) */
   .boutique-card {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 calc(33.333% - 10.66px);
+    max-width: calc(33.333% - 10.66px);
     scroll-snap-align: center;
     margin-bottom: 0;
   }
 }
 
-@media (max-width: 768px) {
+/* 2 cards for mid-sized tablets (768px - 899px) */
+@media (max-width: 899px) {
+  .boutique-card {
+    flex: 0 0 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+  }
+}
+
+/* Specific overrides requested by user for exact devices */
+@media (width: 1024px) and (height: 1366px) {
+  .boutique-card {
+    flex: 0 0 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+  }
+}
+
+@media (width: 820px), (width: 768px), (width: 853px) {
+  .boutique-card {
+    flex: 0 0 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+  }
+}
+
+@media (width: 912px), (width: 1280px), (width: 1024px) and (height: 600px) {
+  .boutique-card {
+    flex: 0 0 calc(33.333% - 10.66px);
+    max-width: calc(33.333% - 10.66px);
+  }
+}
+
+/* Mobile phones (1 card) */
+@media (max-width: 767px) {
   .boutique-section {
     padding: 60px 20px 70px 20px;
   }
@@ -206,6 +238,8 @@
     line-height: 42px;
   }
   .boutique-card {
+    flex: 0 0 100%;
+    max-width: 100%;
     height: 400px;
   }
 }
