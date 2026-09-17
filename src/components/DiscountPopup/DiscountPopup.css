@@ -12,6 +12,11 @@
   animation: fadeIn 0.4s ease-out;
 }
 
+/* Prevent double-darkening when Retail popup opens over this one */
+body:has(.retail-popup-overlay) .discount-popup-overlay {
+  background-color: transparent;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
