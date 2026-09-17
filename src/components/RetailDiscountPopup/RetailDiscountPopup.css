@@ -441,6 +441,10 @@
     border-bottom-right-radius: 0;
   }
   
+  .retail-right-image {
+    background-position: 57% center;
+  }
+  
   .retail-popup-left {
     padding: 20px 10px;
     flex: 1.15;
