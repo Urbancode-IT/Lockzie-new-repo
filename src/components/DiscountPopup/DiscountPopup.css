@@ -394,6 +394,10 @@ body:has(.retail-popup-overlay) .discount-popup-overlay {
     flex: 1.15;
   }
   
+  .discount-right-image {
+    background-position: calc(50% + 3px) center;
+  }
+  
   .discount-logo-icon { font-size: 14px; margin-bottom: 2px; }
   .discount-logo-text { font-size: 12px; letter-spacing: 2px; }
   .discount-logo-sub { font-size: 5px; letter-spacing: 1px; }
@@ -429,4 +433,21 @@ body:has(.retail-popup-overlay) .discount-popup-overlay {
   
   .discount-popup-close { width: 24px; height: 24px; top: 10px; right: 10px; }
   .discount-popup-close svg { width: 10px; height: 10px; }
+}
+
+/* Specific fix for iPhone SE, 12 Pro, 14, Galaxy A55, S8+, Z Fold 5 */
+@media (max-width: 395px) {
+  .discount-popup-left {
+    flex: 0 0 calc(57.5% - 2px) !important;
+  }
+  .discount-popup-right {
+    flex: 0 0 calc(42.5% + 2px) !important;
+  }
+}
+
+/* Specific fix just for Galaxy Z Fold 5 (width: 344px) - shift image only */
+@media (max-width: 350px) {
+  .discount-right-image {
+    background-position: calc(50% + 4px) center;
+  }
 }
