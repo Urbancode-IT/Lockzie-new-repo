@@ -41,7 +41,7 @@ p {
    ========================================= */
 /* Fluid Typography for all service pages (KoreanSkin style + ServiceDetailLayout style) */
 .haircut-hero h1,
-.service-title {
+.service-hero-content .service-title {
   font-size: clamp(40px, 8vw, 110px) !important;
   line-height: 1.1 !important;
 }
