@@ -35,3 +35,62 @@ p {
     -webkit-tap-highlight-color: transparent;
   }
 }
+
+/* =========================================
+   GLOBAL OVERRIDES FOR SERVICE PAGES
+   ========================================= */
+/* Fluid Typography for all service pages (KoreanSkin style + ServiceDetailLayout style) */
+.haircut-hero h1,
+.service-title {
+  font-size: clamp(40px, 8vw, 110px) !important;
+  line-height: 1.1 !important;
+}
+
+.precision-text-content h2,
+.why-choose-text-content h2,
+.haircut-services-text-content h2,
+.why-service-header h2,
+.anatomy-title,
+.next-step-title {
+  font-size: clamp(32px, 6vw, 60px) !important;
+  line-height: 1.2 !important;
+}
+
+.precision-text-content p,
+.why-choose-text-content li,
+.service-desc,
+.anatomy-paragraphs p,
+.why-service-content p,
+.next-step-desc {
+  font-size: clamp(16px, 2.5vw, 20px) !important;
+  line-height: 1.6 !important;
+}
+
+/* Fix image aspect ratios from squishing on mobile */
+.precision-image-wrapper,
+.why-choose-image-wrapper,
+.haircut-services-image-wrapper,
+.anatomy-image-wrapper {
+  width: 100% !important;
+  max-width: 550px !important;
+  height: auto !important;
+  aspect-ratio: 1.1 / 1 !important;
+  margin: 0 auto;
+}
+
+/* Standardize mobile padding across all container classes */
+@media (max-width: 768px) {
+  .precision-haircut-container,
+  .why-choose-container,
+  .haircut-services-container,
+  .anatomy-base-container,
+  .why-service-container,
+  .difference-container,
+  .signature-container,
+  .next-step-container,
+  .service-hero-content {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    gap: 40px !important;
+  }
+}

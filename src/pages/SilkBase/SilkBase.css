@@ -73,14 +73,35 @@
 }
 
 @media screen and (max-width: 768px) {
+  .silk-base-page {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .silk-base-hero {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    padding-left: clamp(16px, 5vw, 24px);
+    padding-right: clamp(16px, 5vw, 24px);
+  }
+
+  .silk-base-hero-content {
+    padding-left: clamp(16px, 5vw, 24px);
+    padding-right: clamp(16px, 5vw, 24px);
+    gap: 40px;
+    text-align: center;
+  }
+
   .silk-base-title {
-    font-size: 40px;
-    line-height: 50px;
+    font-size: clamp(32px, 10vw, 40px);
+    line-height: 1.2;
+    text-align: center;
   }
   
   .silk-base-desc {
     font-size: 16px;
     line-height: 24px;
+    text-align: center;
   }
   
   .silk-base-image-wrapper {
@@ -89,6 +110,35 @@
     height: auto;
     aspect-ratio: 4/5;
     border-radius: 200px 200px 0 0;
+  }
+
+  .silk-base-image-wrapper img {
+    max-width: 100%;
+  }
+
+  .anatomy-base-container,
+  .why-silk-container,
+  .difference-container,
+  .signature-container,
+  .next-step-container {
+    padding-left: clamp(16px, 5vw, 24px) !important;
+    padding-right: clamp(16px, 5vw, 24px) !important;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .anatomy-title,
+  .why-silk-header h2,
+  .why-silk-header p,
+  .difference-header h2,
+  .signature-title,
+  .next-step-title,
+  .next-step-desc {
+    text-align: center;
+  }
+
+  .anatomy-image-wrapper img {
+    max-width: 100%;
   }
 }
 
@@ -480,15 +530,50 @@
   .difference-header h2 {
     font-size: 36px;
     line-height: 46px;
+    text-align: center;
+  }
+
+  .difference-header {
+    align-items: center;
+    text-align: center;
+  }
+
+  .difference-header p {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .difference-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    max-width: 100%;
+  }
+
+  .difference-gallery::-webkit-scrollbar {
+    display: none;
   }
   
   .difference-image {
-    width: calc(50% - 12.5px);
+    flex: 0 0 85%;
+    max-width: 300px;
+    width: auto;
     height: 350px;
+    scroll-snap-align: center;
   }
   
   .difference-image.img-5 {
-    width: 100%;
+    width: auto;
+  }
+
+  .difference-image:hover {
+    width: auto;
   }
 }
 
@@ -723,8 +808,8 @@
 
 @media screen and (max-width: 768px) {
   .next-step-title {
-    font-size: 40px;
-    line-height: 50px;
+    font-size: clamp(32px, 10vw, 40px);
+    line-height: 1.25;
   }
   
   .next-step-buttons {
@@ -735,5 +820,6 @@
   .next-step-btn-primary,
   .next-step-btn-secondary {
     width: 100%;
+    max-width: 100%;
   }
 }

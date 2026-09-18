@@ -217,7 +217,7 @@
   }
   .giant-logo-img {
     width: 100%;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
   }
   .footer-wrapper {
     padding: 0 20px;
@@ -228,7 +228,8 @@
     align-items: flex-start;
   }
   .legal-links {
-    gap: 24px;
+    gap: 20px;
+    flex-wrap: wrap;
   }
   .brand-col, .links-col, .contact-col {
     width: 100%;

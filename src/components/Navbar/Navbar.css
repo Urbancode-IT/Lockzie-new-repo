@@ -252,12 +252,6 @@
   opacity: 1 !important;
 }
 
-@media (max-width: 1024px) {
-  .nav-links {
-    margin: 0 20px 0 0;
-    gap: 10px;
-  }
-}
 
 .mobile-menu-toggle {
   display: none;
@@ -301,7 +295,7 @@
   background-color: #0A0A0A;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar-logo {
     margin-left: 20px;
   }
